@@ -10,11 +10,27 @@ def get_chrome_bookmark_data(path) -> dict:
     with open(path) as f:
         return json.load(f)
 
-#### get the urls of the bookmarks ####
 # define a function that extracts a url from each bookmark
 def get_weblio_url(bookmark):
     if 'Weblio' in bookmark['name'] and '意味・' in bookmark['name']:
         return bookmark['url']
+
+def extract_words_meanings_from_html_files(df: pd.DataFrame, url_list_filtered: list):
+    i = 0
+    while i < len(url_list_filtered):
+        # analyse html files
+        response = requests.get(url_list_filtered[i])
+        soup = BeautifulSoup(response.content, "html.parser")    
+        # extract meanings by setting the class
+        elements = soup.select(".content-explanation.ej")
+        # extract only alphabets from the title, which is the word
+        alphabet = re.compile('[a-z,A-Z]+')
+        word = ' '.join(alphabet.findall(soup.title.text)).replace('Weblio', '')
+        # store the words and meanings in a dataframe
+        if len(elements) > 0:
+            df = df.append([[word, elements[0].text]], ignore_index=True)
+        i += 1
+    return df
 
 def main():
     # set a PATH to your bookmark repository
@@ -31,6 +47,7 @@ def main():
     folderLocationNumber = 0
     bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNumber]['children']
 
+    ### get the urls of the bookmarks ####
     # apply the function to the whole bookmarks
     url_list = list(map(get_weblio_url,bookmarks))
     print(url_list)
@@ -39,21 +56,8 @@ def main():
     url_list_filtered = list(filter(None, url_list))
 
     #### extract words and meanings from html files ####
-    i = 0
     df = pd.DataFrame()
-    while i < len(url_list_filtered):
-        # analyse html files
-        response = requests.get(url_list_filtered[i])
-        soup = BeautifulSoup(response.content, "html.parser")    
-        # extract meanings by setting the class
-        elements = soup.select(".content-explanation.ej")
-        # extract only alphabets from the title, which is the word
-        alphabet = re.compile('[a-z,A-Z]+')
-        word = ' '.join(alphabet.findall(soup.title.text)).replace('Weblio', '')
-        # store the words and meanings in a dataframe
-        if len(elements) > 0:
-            df = df.append([[word, elements[0].text]], ignore_index=True)
-        i += 1
+    df = extract_words_meanings_from_html_files(df, url_list_filtered)
     # export the dataframe as a csv file
     df.to_csv('Weblio_word_list.csv')
 
