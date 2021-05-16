@@ -7,13 +7,13 @@
 ## ENV
 
 - Google Chrome
-- Poetry
+- Python3.9 (Poetry)
 
 ## USAGE
 
-`bookmark.py`の`folderLocationNumber`の値を，英単語のフォルダの番号に入れ替える．
+`bookmark.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
 
-例えば，ブックマーク内のフォルダで，英単語のフォルダを先頭(0番目)に設置しているなら，`0`と書く．
+例えば，ブックマーク内のフォルダで，英単語のフォルダが先頭(0番目)に設置しているなら，`0`と書く．
 
 ```Python
 folderLocationNumber = 0
