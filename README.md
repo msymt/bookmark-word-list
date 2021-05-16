@@ -19,7 +19,7 @@ bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNum
 
 ```bash
 poetry install
-poetry run python solve.py
+poetry run python bookmark.py
 ```
 実行するとcsv形式のファイルが出力される．以下は[novel](https://ejje.weblio.jp/content/novel)の場合
 
