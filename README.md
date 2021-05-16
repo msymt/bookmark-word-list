@@ -6,12 +6,13 @@ Chromeのブックマークのフォルダ内にあるWeblioのサイトから�
 
 ## how to use
 
-`bookmark.py`の以下の部分の数字を，取得したい英単語のフォルダの番号へ入れ替える．
+`bookmark.py`の`folderLocation`の数字を，取得したい英単語のフォルダの番号へ入れ替える．
 
 例えば，ブックマーク内のフォルダで，英単語のフォルダを先頭に設置しているなら以下のように`0`と書く．
 
 ```Python
-bookmarks = bookmark_data['roots']['bookmark_bar']['children'][0]['children']
+folderLocation = 0
+bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocation]['children']
 ```
 
 その後，以下を実行する
