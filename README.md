@@ -10,9 +10,11 @@
 - Google Chrome
 - Python3.9 (Poetry)
 
+他のOSについては，`CHROME_BOOKMARK_PATH`を書き換えて下さい．
+
 ## USAGE
 
-`bookmark.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
+`src/bookmark.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
 
 例えば，ブックマーク内のフォルダで，英単語のフォルダが先頭(1番目, 下の`英単語集`)に設置しているなら，`0`と書く．
 
@@ -33,7 +35,7 @@ bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNum
 
 ```bash
 poetry install
-poetry run python bookmark.py
+poetry run python src/bookmark.py
 ```
 
 ## Examples
