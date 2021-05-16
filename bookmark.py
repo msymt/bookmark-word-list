@@ -1,6 +1,11 @@
-#### get bookmark info ####
 import json
 import getpass
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import re
+
+#### get bookmark info ####
 # set a PATH to your bookmark repository
 CHROME_BOOKMARK_PATH = (
     '/Users/{username}/Library/Application Support/'
@@ -28,10 +33,6 @@ print(url_list)
 url_list_filtered = list(filter(None, url_list))
 
 #### extract words and meanings from html files ####
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import re
 i = 0
 df = pd.DataFrame()
 while i < len(url_list_filtered):
