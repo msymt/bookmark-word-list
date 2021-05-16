@@ -1,6 +1,6 @@
 # bookmark-word-list
 
-ブックマークしたWeblioのサイトから，英単語とその意味を取得し，csvファイルを出力する．
+ブックマークした[Weblio](https://ejje.weblio.jp/)のサイトから，英単語とその意味を取得し，csvファイルを出力する．
 
 コードの大半は[こちら](https://harigami.net/cd?hsh=c4a5b7ed-8821-4d0d-a60d-e93fa69a9d65#L17)を利用した．
 
@@ -10,11 +10,11 @@
 - Google Chrome
 - Python3.9 (Poetry)
 
-他のOSについては，`CHROME_BOOKMARK_PATH`を書き換えて下さい．
+他のOSについては，`src/main.py`の`CHROME_BOOKMARK_PATH`を書き換えて下さい．
 
 ## USAGE
 
-`src/bookmark.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
+`src/main.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
 
 例えば，ブックマーク内のフォルダで，英単語のフォルダが先頭(1番目, 下の`英単語集`)に設置しているなら，`0`と書く．
 
@@ -35,7 +35,7 @@ bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNum
 
 ```bash
 poetry install
-poetry run python src/bookmark.py
+poetry run python src/main.py
 ```
 
 ## Examples
