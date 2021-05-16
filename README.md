@@ -24,7 +24,7 @@
 ```
 
 ```Python
-folderLocationNumber = 0
+folderLocationNumber = 0  # here
 bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNumber]['children']
 ```
 
