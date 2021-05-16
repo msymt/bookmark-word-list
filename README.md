@@ -1,4 +1,4 @@
-# bookmark-word-list
+# bookmark-wordbook-generator
 
 ブックマークした[Weblio](https://ejje.weblio.jp/)のサイトから，英単語とその意味を取得し，csvファイルを出力する．
 
