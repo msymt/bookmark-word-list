@@ -18,8 +18,8 @@ def get_chrome_bookmark_data() -> dict:
 bookmark_data = get_chrome_bookmark_data()
 
 # locate your wanted bookmarks /////This depends on the structure of your bookmarks.
-folderLocation = 0
-bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocation]['children']
+folderLocationNumber = 0
+bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNumber]['children']
 
 #### get the urls of the bookmarks ####
 # define a function that extracts a url from each bookmark
