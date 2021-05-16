@@ -34,6 +34,9 @@ bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNum
 poetry install
 poetry run python bookmark.py
 ```
+
+## Examples
+
 実行するとcsv形式のファイルが出力される．以下は[novel](https://ejje.weblio.jp/content/novel)の場合
 
 ```
