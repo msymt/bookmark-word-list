@@ -27,3 +27,7 @@ poetry run python solve.py
 ,0,1
 0,novel ,(よい意味で)新しい、新奇な、奇抜な
 ```
+
+Numbersでcsvファイルを開いた場合
+
+![Numbers](./images/image.png)
