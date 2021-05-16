@@ -14,21 +14,21 @@
 
 ## USAGE
 
-`src/main.py`の`folderLocationNumber`の値を，取得したいブックマークフォルダの番号に入れ替える．
+`src/main.py`の`folder_location_number`の値を，取得したいブックマークフォルダの番号に入れ替える．
 
 例えば，ブックマーク内のフォルダで，英単語のフォルダが先頭(1番目, 下の`英単語集`)に設置しているなら，`0`と書く．
 
 ```
 /ブックマーク
-|-英単語集
-|-フォルダ1
-|-フォルダ2
+|-英単語集  # 0
+|-フォルダ1 # 1
+|-フォルダ2 # 2
 ...
 ```
 
 ```Python
-folderLocationNumber = 0  # here
-bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNumber]['children']
+folder_location_number = 0  # here
+bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folder_location_number]['children']
 ```
 
 その後，以下を実行する

@@ -44,8 +44,8 @@ def main():
     bookmark_data = get_chrome_bookmark_data(CHROME_BOOKMARK_PATH)
 
     # locate your wanted bookmarks /////This depends on the structure of your bookmarks.
-    folderLocationNumber = 0
-    bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folderLocationNumber]['children']
+    folder_location_number = 0
+    bookmarks = bookmark_data['roots']['bookmark_bar']['children'][folder_location_number]['children']
 
     ### get the urls of the bookmarks ####
     # apply the function to the whole bookmarks
