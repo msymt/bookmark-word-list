@@ -1,8 +1,13 @@
 # bookmark-word-list
 
-Chromeのブックマークのフォルダ内にあるWeblioのサイトから，英単語とその意味を取得し，csvファイルを出力する．
+ブックマークしたWeblioのサイトから，英単語とその意味を取得し，csvファイルを出力する．
 
 コードの大半は[こちら](https://harigami.net/cd?hsh=c4a5b7ed-8821-4d0d-a60d-e93fa69a9d65#L17)を利用した．
+
+## ENV
+
+- Google Chrome
+- Poetry
 
 ## USAGE
 
