@@ -6,7 +6,7 @@
 
 ## ENV
 
-
+- MacOS
 - Google Chrome
 - Python3.9 (Poetry)
 
