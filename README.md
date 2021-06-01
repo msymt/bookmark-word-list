@@ -12,7 +12,7 @@
 
 - MacOS
 - Google Chrome
-- Python3.9 (Poetry)
+- Python3.5+ (maybe)
 
 他のOSについては，`src/main.py`の`CHROME_BOOKMARK_PATH`を書き換えて下さい．
 
