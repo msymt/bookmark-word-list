@@ -14,7 +14,7 @@
 - Google Chrome
 - Python3.5+ (maybe)
 
-他のOSについては，`src/main.py`の`CHROME_BOOKMARK_PATH`を書き換えて下さい．
+他のOSについては，`src/main.py`の`CHROME_BOOKMARK_PATH`を書き換えて下さい(要テスト)．
 
 ## USAGE
 
